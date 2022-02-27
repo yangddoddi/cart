@@ -5,46 +5,75 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>내집꾸미기</title>
+
     <link rel="stylesheet" href="style.css">
+
     <script src="main.js"></script>
+    <script src="https://kit.fontawesome.com/6cca727381.js" crossorigin="anonymous"></script>
+
+
 </head>
 
 <body>
     <nav id="navbar">
-        <i class="fa-light fa-house logo">내집꾸미기</i>
-        <ul class="navbar__menu">
-            <li class="navbar__menu__item">홈</li>
-            <li class="navbar__menu__item">온라인 집들이</li>
-            <li class="navbar__menu__item">스토어</li>
-            <li class="navbar__menu__item">전문가</li>
-            <li class="navbar__menu__item">시공 견적</li>
-        </ul>
+        <div class="navbar__left">
+            <i 내집꾸미기 class="fa-solid fa-house logo">내집꾸미기</i>
+            <ul class="navbar__menu">
+                <li class="navbar__menu__item">홈</li>
+                <li class="navbar__menu__item">온라인 집들이</li>
+                <li class="navbar__menu__item active">스토어</li>
+                <li class="navbar__menu__item">전문가</li>
+                <li class="navbar__menu__item">시공 견적</li>
+            </ul>
+        </div>
         <div class="navbar__button__contianer">
             <button class="navbar__button">로그인</button>
             <button class="navbar__button">회원가입</button>
         </div>
     </nav>
     <section id="shop">
-        <div class="shop__top">
-            <form>
-                <input type="text">
-            </form>
+        <form>
+            <input class="searchBox" type="text" placeholder=" 검색어를 입력해주세요.">
+        </form>
         </div>
-        <div class="section__bottom">
+        <div class="shop__bottom">
             <div class="shop__category">
                 <h2>모든 상품 리스트</h2>
-                <ul class="shop__list">
-                    <li class="shop__list__item"></li>
-                    <li class="shop__list__item"></li>
-                    <li class="shop__list__item"></li>
-                    <li class="shop__list__item"></li>
-                </ul>
+                <div class="shop__list">
+                    <div class="shop__list__item">
+                        <img src="/pr1.JPG" alt="shopitem" class="shop__list__item--img">
+                        <p class="shop__list__item--title">식기세척기</p>
+                        <p class="shop__list__item--discription">세척나라</p>
+                        <span class="shop__list__item--price">100000</span>
+                    </div>
+                    <div class="shop__list__item">
+                        <img src="/pr1.JPG" alt="shopitem" class="shop__list__item--img">
+                        <p class="shop__list__item--title">식기세척기</p>
+                        <p class="shop__list__item--discription">세척나라</p>
+                        <span class="shop__list__item--price">100000</span>
+                    </div>
+                    <div class="shop__list__item">
+                        <img src="/pr1.JPG" alt="shopitem" class="shop__list__item--img">
+                        <p class="shop__list__item--title">식기세척기</p>
+                        <p class="shop__list__item--discription">세척나라</p>
+                        <span class="shop__list__item--price">100000</span>
+                    </div>
+                    <div class="shop__list__item">
+                        <img src="/pr1.JPG" alt="shopitem" class="shop__list__item--img">
+                        <p class="shop__list__item--title">식기세척기</p>
+                        <p class="shop__list__item--discription">세척나라</p>
+                        <span class="shop__list__item--price">100000</span>
+                    </div>
+                </div>
             </div>
             <div class="shop__cart">
                 <h2>장바구니</h2>
                 <div class="shop__cart__card">
-
+                    <div class="shop__cart__card--box"><span>이곳에 상품을 놓아주세요</span></div>
+                    <p class="shop__cart__card--totlPrice">총 합계 0원</p>
+                    <button class="shop__cart__card--button">구매하기</button>
                 </div>
             </div>
 

@@ -1,0 +1,133 @@
+body {
+  margin: 0px;
+  overflow: hidden;
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+}
+*::-webkit-scrollbar {
+  display: none;
+  /* Chrome, Safari, Opera*/
+}
+
+#navbar {
+  display: flex;
+  flex-direction: row;
+  background-color: #343a40;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 20px;
+}
+#navbar .navbar__left {
+  align-items: center;
+  display: flex;
+}
+#navbar .logo {
+  color: white;
+  font-size: 20px;
+}
+#navbar .navbar__menu {
+  display: flex;
+  list-style: none;
+  color: #878b8e;
+}
+#navbar .navbar__menu__item {
+  padding: 0px 5px;
+  margin: 0px 5px;
+  cursor: pointer;
+}
+#navbar .active {
+  color: white;
+}
+#navbar .navbar__button {
+  border-radius: 5px;
+  width: 70px;
+  height: 30px;
+  border: none;
+  margin: 0px 5px;
+}
+
+#shop {
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+}
+#shop .searchBox {
+  width: 100%;
+  height: 30px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+}
+#shop .shop__bottom {
+  display: flex;
+}
+#shop .shop__category {
+  width: 70%;
+}
+#shop .shop__list {
+  display: flex;
+}
+#shop .shop__list__item {
+  width: 100%/4;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  margin: 10px;
+}
+#shop .shop__list__item--title {
+  font-weight: bold;
+  padding: 0px 10px;
+}
+#shop .shop__list__item--discription {
+  padding: 0px 10px;
+}
+#shop .shop__list__item--img {
+  width: 100%;
+}
+#shop .shop__list__item--price {
+  display: inline-block;
+  background-color: #f7f7f7;
+  width: 100%;
+  padding: 10px;
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
+}
+#shop .shop__cart {
+  width: 30%;
+  height: 100%;
+}
+#shop .shop__cart__card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  width: 100%;
+  height: 100%;
+}
+#shop .shop__cart__card--box {
+  margin: 20px auto;
+  width: 90%;
+  background-color: #343a40;
+  text-align: center;
+}
+#shop .shop__cart__card--box span {
+  line-height: 250px;
+  color: white;
+}
+#shop .shop__cart__card--totlPrice {
+  align-self: flex-end;
+  padding: 0px 20px;
+  margin-top: 0px;
+}
+#shop .shop__cart__card--button {
+  background-color: #027bff;
+  padding: 10px;
+  color: white;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+}/*# sourceMappingURL=style.css.map */

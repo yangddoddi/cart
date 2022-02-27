@@ -1,5 +1,14 @@
+$titleSize: 20px;
+$navbarColor: #343a40;
+$navmenuColor: #878b8e;
+$cardbottom: #f7f7f7;
+$cartbutton: #027bff;
+$shopPriceBackgroud: #f7f7f7;
+$bordergrey: 1px solid rgba(0, 0, 0, 0.2);
+
 body {
   margin: 0px;
+  overflow: hidden;
 }
 
 * {
@@ -10,5 +19,142 @@ body {
 
   &::-webkit-scrollbar {
     display: none; /* Chrome, Safari, Opera*/
+  }
+}
+
+#navbar {
+  display: flex;
+  flex-direction: row;
+  background-color: $navbarColor;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 20px;
+
+  .navbar__left {
+    align-items: center;
+    display: flex;
+  }
+
+  .logo {
+    color: white;
+    font-size: $titleSize;
+  }
+
+  .navbar__menu {
+    display: flex;
+    list-style: none;
+    color: $navmenuColor;
+  }
+
+  .navbar__menu__item {
+    padding: 0px 5px;
+    margin: 0px 5px;
+    cursor: pointer;
+  }
+
+  .active {
+    color: white;
+  }
+
+  .navbar__button {
+    border-radius: 5px;
+    width: 70px;
+    height: 30px;
+    border: none;
+    margin: 0px 5px;
+  }
+}
+
+#shop {
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+
+  .searchBox {
+    width: 100%;
+    height: 30px;
+    border: $bordergrey;
+    border-radius: 5px;
+  }
+
+  .shop__bottom {
+    display: flex;
+  }
+
+  .shop__category {
+    width: 70%;
+  }
+
+  .shop__list {
+    display: flex;
+  }
+
+  .shop__list__item {
+    width: 100%/4;
+    border: $bordergrey;
+    border-radius: 5px;
+    margin: 10px;
+  }
+
+  .shop__list__item--title {
+    font-weight: bold;
+    padding: 0px 10px;
+  }
+
+  .shop__list__item--discription {
+    padding: 0px 10px;
+  }
+
+  .shop__list__item--img {
+    width: 100%;
+  }
+
+  .shop__list__item--price {
+    display: inline-block;
+    background-color: $shopPriceBackgroud;
+    width: 100%;
+    padding: 10px;
+    border-top: $bordergrey;
+  }
+
+  .shop__cart {
+    width: 30%;
+    height: 100%;
+  }
+
+  .shop__cart__card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: $bordergrey;
+    width: 100%;
+    height: 100%;
+  }
+
+  .shop__cart__card--box {
+    margin: 20px auto;
+    width: 90%;
+    background-color: $navbarColor;
+    text-align: center;
+  }
+
+  .shop__cart__card--box span {
+    line-height: 250px;
+    color: white;
+  }
+
+  .shop__cart__card--totlPrice {
+    align-self: flex-end;
+    padding: 0px 20px;
+    margin-top: 0px;
+  }
+
+  .shop__cart__card--button {
+    background-color: $cartbutton;
+    padding: 10px;
+    color: white;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
   }
 }
