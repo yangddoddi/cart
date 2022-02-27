@@ -110,7 +110,7 @@ body {
   }
 
   .shop__list__item--img {
-    width: 100%;
+    width: 200px;
     height: 60%;
   }
 
@@ -161,5 +161,9 @@ body {
     border: none;
     font-size: 18px;
     cursor: pointer;
+  }
+
+  .hide {
+    display: none;
   }
 }

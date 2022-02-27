@@ -91,7 +91,7 @@ body {
   padding: 0px 10px;
 }
 #shop .shop__list__item--img {
-  width: 100%;
+  width: 200px;
   height: 60%;
 }
 #shop .shop__list__item--price {
@@ -135,4 +135,7 @@ body {
   border: none;
   font-size: 18px;
   cursor: pointer;
+}
+#shop .hide {
+  display: none;
 }/*# sourceMappingURL=style.css.map */
