@@ -1,6 +1,5 @@
 body {
   margin: 0px;
-  overflow: hidden;
 }
 
 * {
@@ -81,6 +80,7 @@ body {
   display: flex;
   justify-content: space-between;
   flex-direction: column;
+  cursor: move;
 }
 #shop .shop__list__item--title {
   font-weight: bold;
@@ -102,7 +102,7 @@ body {
   border-top: 1px solid rgba(0, 0, 0, 0.2);
 }
 #shop .shop__cart {
-  width: 30%;
+  width: 400px;
   height: 100%;
 }
 #shop .shop__cart__card {
@@ -138,4 +138,53 @@ body {
 }
 #shop .hide {
   display: none;
+}
+#shop .shop__list__item--title span {
+  background-color: #ff9;
+  color: #555;
+}
+#shop .shop__list__item.dragging {
+  opacity: 0.5;
+}
+#shop .cartlist__product {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+}
+#shop .cartlist__product__item {
+  display: flex;
+  flex-direction: row;
+  background-color: white;
+  align-items: flex-start;
+}
+#shop .cartlist__product span {
+  line-height: 0px;
+  display: inline-block;
+  color: black;
+}
+#shop .cartlist__product__option {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+#shop .cartlist__product__img {
+  width: 200px;
+}
+#shop .cartlist__product__title {
+  font-weight: bold;
+  margin-bottom: 0px;
+}
+#shop .cartlist__product__brand {
+  margin: 0px;
+}
+#shop .cartlist__product__quantity {
+  width: 30px;
+  display: inline-block;
+  margin-left: 5px;
+}
+#shop .cartlist__product__price {
+  margin-top: 0px;
+}
+#shop .cartlist__product__text {
+  display: inline-block;
 }/*# sourceMappingURL=style.css.map */

@@ -39,4 +39,55 @@ searchBox.addEventListener("input", () => {
   }
 });
 
-// 서치박스에 메뉴 아이템의 제목에 들어가는 글자가 포함되는 것만 보여주십시오.
+// 상품을 장바구니에 드래그&드롭하면 장바구니에 추가됨.
+const cartBox = document.querySelector(".shop__cart__card--box");
+const cartList = document.querySelector(".shop__cart__card--cartlist");
+const cartListContainer = document.querySelector(".cartlist__product");
+const cartListItem = `<div class="cartlist__product">
+<img src="/pr1.JPG" alt="shopitem" class="cartlist__product__img">
+<div class="cartlist__product__option">
+    <p class="cartlist__product__title">식기세척기</p>
+    <p class="cartlist__product__brand">세척나라</p>
+    <p class="cartlist__product__price">100000</p>
+    <span>수량<input type="text" class="cartlist__product__quantity"></span>
+</div>
+</div>`;
+let cartCount = 0;
+
+for (let i = 0; i < shopLsItem.length; i++) {
+  shopLsItem[i].addEventListener("dragstart", function (e) {
+    e.target.classList.add("dragging");
+    e.dataTransfer.setData("data", e.target.innerHTML);
+    e.dataTransfer.setData("title", shopItemtitle[i].innerHTML);
+    e.dataTransfer.setData("brand", shopItemBrand[i].innerHTML);
+    e.dataTransfer.setData("price", shopItemPrice[i].innerHTML);
+    e.dataTransfer.setData("img", shopItemImg[i].src);
+    // e.dataTransfer.setData("text", shopItemPrice[i].innerHTML);
+  });
+
+  shopLsItem[i].addEventListener("dragend", function (e) {
+    e.target.classList.remove("dragging");
+  });
+}
+
+cartBox.addEventListener("dragover", function (e) {
+  e.preventDefault();
+});
+
+cartBox.addEventListener("drop", function (e) {
+  e.preventDefault();
+
+  let cartItemBox = document.querySelectorAll(".cartlist__product");
+  let cartItemTitle = document.querySelectorAll(".cartlist__product__title");
+  let cartItemBrand = document.querySelectorAll(".cartlist__product__brand");
+  let cartItemPrice = document.querySelectorAll(".cartlist__product__price");
+  let cartItemImg = document.querySelectorAll(".cartlist__product__img");
+
+  //  1. 첫번째 요소 생성시 innerHTML이 작동하지 않는다.
+  cartListContainer.insertAdjacentHTML("beforeend", cartListItem);
+  cartItemBrand[cartCount].innerHTML = e.dataTransfer.getData("brand");
+  cartItemPrice[cartCount].innerHTML = e.dataTransfer.getData("price");
+  cartItemImg[cartCount].src = e.dataTransfer.getData("img");
+  cartItemTitle[cartCount].innerHTML = e.dataTransfer.getData("title");
+  cartCount++;
+});
