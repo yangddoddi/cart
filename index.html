@@ -7,7 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>내집꾸미기</title>
     <link rel="stylesheet" href="style.css">
-    <script src="/store.json"></script>
     <script src="main.js" defer></script>
     <script src="https://kit.fontawesome.com/6cca727381.js" crossorigin="anonymous"></script>
 
@@ -17,80 +16,111 @@
 
 <body>
     <nav id="navbar">
-        <div class="navbar__left">
-            <i 내집꾸미기 class="fa-solid fa-house logo">내집꾸미기</i>
-            <ul class="navbar__menu">
-                <li class="navbar__menu__item">홈</li>
-                <li class="navbar__menu__item">온라인 집들이</li>
-                <li class="navbar__menu__item active">스토어</li>
-                <li class="navbar__menu__item">전문가</li>
-                <li class="navbar__menu__item">시공 견적</li>
-            </ul>
-        </div>
-        <div class="navbar__button__contianer">
-            <button class="navbar__button">로그인</button>
-            <button class="navbar__button">회원가입</button>
+        <div class="navbar__container">
+            <div class="navbar__logoAndList">
+                <i class="fa-solid fa-house navbar__logo">내집꾸미기</i>
+                <ul class="navbar__list">
+                    <li class="navbar__list__item">홈</li>
+                    <li class="navbar__list__item">온라인 집들이</li>
+                    <li class="navbar__list__item active">스토어</li>
+                    <li class="navbar__list__item">전문가</li>
+                    <li class="navbar__list__item">시공 견적</li>
+                </ul>
+            </div>
+            <div class="navbar__btnBox">
+                <button class="navbar__btnBox__loginBtn">로그인</button>
+                <button class="navbar__btnBox__signInBtn">회원가입</button>
+            </div>
         </div>
     </nav>
-    <section id="shop">
-        <form>
-            <input class="searchBox" type="text" placeholder=" 검색어를 입력해주세요.">
-        </form>
-        </div>
-        <div class="shop__bottom">
-            <div class="shop__category">
-                <h2>모든 상품 리스트</h2>
-                <div class="shop__list">
-                    <div class="shop__list__item" draggable="true">
-                        <img src="/pr1.JPG" alt="shopitem" draggable="false" class="shop__list__item--img">
-                        <p class="shop__list__item--title">식기세척기</p>
-                        <p class="shop__list__item--brand">세척나라</p>
-                        <span class="shop__list__item--price">100000</span>
-                    </div>
-                    <div class="shop__list__item" draggable="true">
-                        <img src="/pr1.JPG" alt="shopitem" draggable="false" class="shop__list__item--img">
-                        <p class="shop__list__item--title">식기세척기</p>
-                        <p class="shop__list__item--brand">세척나라</p>
-                        <span class="shop__list__item--price">100000</span>
-                    </div>
-                    <div class="shop__list__item" draggable="true">
-                        <img src="/pr1.JPG" alt="shopitem" draggable="false" class="shop__list__item--img">
-                        <p class="shop__list__item--title">식기세척기</p>
-                        <p class="shop__list__item--brand">세척나라</p>
-                        <span class="shop__list__item--price">100000</span>
-                    </div>
-                    <div class="shop__list__item" draggable="true">
-                        <img src="/pr1.JPG" alt="shopitem" draggable="false" class="shop__list__item--img">
-                        <p class="shop__list__item--title">식기세척기</p>
-                        <p class="shop__list__item--brand">세척나라</p>
-                        <span class="shop__list__item--price">100000</span>
-                    </div>
-                </div>
-            </div>
-            <div class="shop__cart">
-                <h2>장바구니</h2>
-                <div class="shop__cart__card">
-                    <div class="shop__cart__card--box"><span>이곳에 상품을 놓아주세요</span>
-                        <div class="shop__cart__card--cartlist">
-                            <div class="cartlist__product"></div>
-                        </div>
-                    </div>
-                    <p class="shop__cart__card--totlPrice">총 합계 0원</p>
-                    <button class="shop__cart__card--button">구매하기</button>
-                </div>
-            </div>
 
-        </div>
-    </section>
-    <!-- <div class="cartlist__product__item">
-                                    <img src="/pr1.JPG" alt="shopitem" class="cartlist__product__img">
-                                    <div class="cartlist__product__option">
-                                        <p class="cartlist__product__title">식기세척기</p>
-                                        <p class="cartlist__product__brand">세척나라</p>
-                                        <p class="cartlist__product__price">100000</p>
-                                        <span>수량<input type="text" class="cartlist__product__quantity"></span>
-                                    </div>
-                                </div> -->
+    <div class="searchBox">
+        <form>
+            <input type="text" id="searchBox" placeholder="검색어를 입력해주세요.">
+        </form>
+    </div>
+    <div class="main">
+        <section class="shop">
+            <h1 class="shop__header">모든 상품 리스트</h1>
+            <div class="shop__itemList">
+                <div class="shop__itemList__item">
+                    <img src="/pr1.JPG" alt="shopItemImg" class="shop__itemList__img">
+                    <h3 class="shop__itemList__item--productName">
+                        식기세척기
+                    </h3>
+                    <span class="shop__itemList__item--branName">
+                        세척나라
+                    </span>
+                    <span class="shop__itemList__item--price">
+                        10000
+                    </span>
+                </div>
+                <div class="shop__itemList__item">
+                    <img src="/pr1.JPG" alt="shopItemImg" class="shop__itemList__img">
+                    <h3 class="shop__itemList__item--productName">
+                        식기세척기
+                    </h3>
+                    <span class="shop__itemList__item--branName">
+                        세척나라
+                    </span>
+                    <span class="shop__itemList__item--price">
+                        10000
+                    </span>
+                </div>
+                <div class="shop__itemList__item">
+                    <img src="/pr1.JPG" alt="shopItemImg" class="shop__itemList__img">
+                    <h3 class="shop__itemList__item--productName">
+                        식기세척기
+                    </h3>
+                    <span class="shop__itemList__item--branName">
+                        세척나라
+                    </span>
+                    <span class="shop__itemList__item--price">
+                        10000
+                    </span>
+                </div>
+                <div class="shop__itemList__item">
+                    <img src="/pr1.JPG" alt="shopItemImg" class="shop__itemList__img">
+                    <h3 class="shop__itemList__item--productName">
+                        식기세척기
+                    </h3>
+                    <span class="shop__itemList__item--branName">
+                        세척나라
+                    </span>
+                    <span class="shop__itemList__item--price">
+                        10000
+                    </span>
+                </div>
+            </div>
+        </section>
+        <section class="cart">
+            <h1 class="cart__header">장바구니</h1>
+            <div class="cart__cartBox">
+                <div class="cart__cartBox__dropArea">
+                    이 곳에 상품을 놓아주세요.
+                </div>
+                <div class="cart__cartBox__itemList">
+                    <div class="cart__cartBox__itemList--item">
+                        <img src="/pr1.JPG" alt="cartItemImg">
+                        <h3 class="cartItem__productName">
+                            식기세척기
+                        </h3>
+                        <span class="cartItem__brandName">
+                            향기나라
+                        </span>
+                        <form>
+                            <label class="cartItemQuantity__label">수량</label>
+                            <input type="text" id="cartItemQuantity">
+                        </form>
+                        <span class="cartITem__price">100000원</span>
+                    </div>
+
+                </div>
+                <span class="cart__cartBox__totalPrice">Total 10000원</span>
+                <button class="cart__cartBox__purchaseBtn">구매하기</button>
+            </div>
+        </section>
+    </div>
 </body>
 
 </html>

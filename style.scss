@@ -1,14 +1,12 @@
 $titleSize: 20px;
+$marginSpace: 10px;
 $navbarColor: #343a40;
-$navmenuColor: #878b8e;
-$cardbottom: #f7f7f7;
-$cartbutton: #027bff;
+$navMenuItemColor: #878b8e;
+$shopItemBottom: #f7f7f7;
+$cartButton: #027bff;
 $shopPriceBackgroud: #f7f7f7;
-$bordergrey: 1px solid rgba(0, 0, 0, 0.2);
-
-body {
-  margin: 0px;
-}
+$white: #ffffff;
+$borderGrey: 1px solid rgba(0, 0, 0, 0.2);
 
 * {
   box-sizing: border-box;
@@ -21,210 +19,161 @@ body {
   }
 }
 
+li {
+  list-style: none;
+}
+
+body {
+  margin: 0px;
+}
+
+h3 {
+  font-weight: 500;
+}
+
 #navbar {
   display: flex;
-  flex-direction: row;
-  background-color: $navbarColor;
-  align-items: center;
   justify-content: space-between;
-  padding: 0px 20px;
+  width: 100%;
+  height: 40px;
+  background-color: $navbarColor;
+  padding: $marginSpace;
+  overflow: hidden;
 
-  .navbar__left {
-    align-items: center;
+  .navbar__container {
     display: flex;
+    text-align: center;
+    width: 100%;
+    max-width: 1200px;
+    justify-content: space-between;
   }
 
-  .logo {
-    color: white;
+  .navbar__logoAndList {
+    display: flex;
+    text-align: center;
+    height: 100%;
+  }
+
+  .navbar__logo {
+    color: $white;
     font-size: $titleSize;
   }
 
-  .navbar__menu {
+  .navbar__list {
     display: flex;
-    list-style: none;
-    color: $navmenuColor;
+    color: $navMenuItemColor;
+    align-self: center;
   }
 
-  .navbar__menu__item {
-    padding: 0px 5px;
-    margin: 0px 5px;
-    cursor: pointer;
+  .navbar__list__item {
+    margin: 0px $marginSpace;
   }
 
-  .active {
-    color: white;
-  }
-
-  .navbar__button {
-    border-radius: 5px;
-    width: 70px;
-    height: 30px;
-    border: none;
-    margin: 0px 5px;
+  .navbar__list__item.active {
+    color: $white;
   }
 }
 
-#shop {
-  padding: 50px;
+#searchBox {
+  width: 95%;
+  max-width: 1200px;
+  height: 30px;
+  display: block;
+  margin: $marginSpace * 2;
+  border: $borderGrey;
+}
+
+.main {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
+  padding: 0px $marginSpace * 2;
+  max-width: 1200px;
 
-  .searchBox {
-    width: 100%;
-    height: 30px;
-    border: $bordergrey;
-    border-radius: 5px;
-  }
-
-  .shop__bottom {
+  .shop {
     display: flex;
-  }
-
-  .shop__category {
-    width: 70%;
-  }
-
-  .shop__list {
-    display: flex;
-  }
-
-  .shop__list__item {
-    width: 100%/4;
-    border: $bordergrey;
-    border-radius: 5px;
-    margin: 10px;
-    display: flex;
-    justify-content: space-between;
     flex-direction: column;
-    cursor: move;
   }
 
-  .shop__list__item--title {
-    font-weight: bold;
-    padding: 0px 10px;
-    margin-bottom: 0px;
+  .cart {
+    display: flex;
+    flex-direction: column;
   }
 
-  .shop__list__item--brand {
-    padding: 0px 10px;
+  .shop__itemList {
+    display: flex;
   }
 
-  .shop__list__item--img {
+  .shop__itemList__item {
     width: 200px;
-    height: 60%;
-  }
-
-  .shop__list__item--price {
-    display: inline-block;
-    background-color: $shopPriceBackgroud;
-    width: 100%;
-    padding: 10px;
-    border-top: $bordergrey;
-  }
-
-  .shop__cart {
-    width: 400px;
-    height: 100%;
-  }
-
-  .shop__cart__card {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    border: $bordergrey;
-    width: 100%;
-    height: 100%;
+    margin-right: $marginSpace * 2;
+    border: $borderGrey;
   }
 
-  .shop__cart__card--box {
-    margin: 20px auto;
-    width: 90%;
+  .shop__itemList__item--productName,
+  .shop__itemList__item--branName {
+    margin: $marginSpace;
+  }
+
+  .shop__itemList__item--branName {
+    margin-top: 0px;
+  }
+
+  .shop__itemList__item--price {
+    display: block;
+    background-color: $shopItemBottom;
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    padding-left: $marginSpace;
+  }
+
+  .cart__cartBox {
+    border: $borderGrey;
+    padding: $marginSpace;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .cart__cartBox__dropArea {
+    width: 250px;
+    height: 250px;
     background-color: $navbarColor;
     text-align: center;
-  }
-
-  .shop__cart__card--box span {
     line-height: 250px;
-    color: white;
+    margin-bottom: $marginSpace;
+    color: $white;
   }
 
-  .shop__cart__card--totlPrice {
-    align-self: flex-end;
-    padding: 0px 20px;
-    margin-top: 0px;
-  }
-
-  .shop__cart__card--button {
-    background-color: $cartbutton;
-    padding: 10px;
-    color: white;
-    border: none;
-    font-size: 18px;
-    cursor: pointer;
-  }
-
-  .hide {
-    display: none;
-  }
-
-  .shop__list__item--title span {
-    background-color: #ff9;
-    color: #555;
-  }
-
-  .shop__list__item.dragging {
-    opacity: 0.5;
-  }
-
-  .cartlist__product {
+  .cart__cartBox__itemList--item img {
     display: flex;
     flex-direction: column;
-    background-color: white;
-  }
-
-  .cartlist__product__item {
-    display: flex;
-    flex-direction: row;
-    background-color: white;
-    align-items: flex-start;
-  }
-
-  .cartlist__product span {
-    line-height: 0px;
-    display: inline-block;
-    color: black;
-  }
-
-  .cartlist__product__option {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .cartlist__product__img {
     width: 200px;
   }
 
-  .cartlist__product__title {
-    font-weight: bold;
+  .cartItem__productName {
     margin-bottom: 0px;
   }
 
-  .cartlist__product__brand {
-    margin: 0px;
-  }
-
-  .cartlist__product__quantity {
+  .cartItemQuantity__label {
+    font-size: 14px;
     width: 30px;
+    height: 20px;
+    text-align: center;
     display: inline-block;
-    margin-left: 5px;
+    background-color: $shopItemBottom;
+    border: $borderGrey;
   }
 
-  .cartlist__product__price {
-    margin-top: 0px;
+  #cartItemQuantity {
+    height: 20px;
+    border: $borderGrey;
   }
 
-  .cartlist__product__text {
-    display: inline-block;
+  .cart__cartBox__totalPrice {
+    margin-top: $marginSpace * 2;
+    margin-bottom: $marginSpace;
+    align-self: flex-end;
   }
 }
