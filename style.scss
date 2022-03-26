@@ -38,7 +38,6 @@ h3 {
   height: 40px;
   background-color: $navbarColor;
   padding: $marginSpace;
-  overflow: hidden;
 
   .navbar__container {
     display: flex;
@@ -105,10 +104,17 @@ h3 {
 
   .shop__itemList__item {
     width: 200px;
+    height: 300px;
     display: flex;
     flex-direction: column;
     margin-right: $marginSpace * 2;
     border: $borderGrey;
+    position: relative;
+    cursor: move;
+  }
+
+  .shop__itemList__img {
+    height: 170px;
   }
 
   .shop__itemList__item--productName,
@@ -121,6 +127,8 @@ h3 {
   }
 
   .shop__itemList__item--price {
+    position: absolute;
+    bottom: 0px;
     display: block;
     background-color: $shopItemBottom;
     width: 100%;
@@ -130,6 +138,7 @@ h3 {
   }
 
   .cart__cartBox {
+    position: relative;
     border: $borderGrey;
     padding: $marginSpace;
     display: flex;
@@ -166,14 +175,30 @@ h3 {
     border: $borderGrey;
   }
 
-  #cartItemQuantity {
+  .cartItemInput {
     height: 20px;
     border: $borderGrey;
   }
 
   .cart__cartBox__totalPrice {
-    margin-top: $marginSpace * 2;
-    margin-bottom: $marginSpace;
-    align-self: flex-end;
+    display: inline-block;
+    margin-bottom: $marginSpace * 3;
+  }
+
+  .cart__cartBox__purchaseBtn {
+    border: none;
+    outline: none;
+    background-color: #027bff;
+    color: $white;
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    left: 0px;
+    height: 30px;
+    cursor: pointer;
+  }
+
+  .hideItem {
+    display: none;
   }
 }

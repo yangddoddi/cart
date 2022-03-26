@@ -30,7 +30,6 @@ h3 {
   height: 40px;
   background-color: #343a40;
   padding: 10px;
-  overflow: hidden;
 }
 #navbar .navbar__container {
   display: flex;
@@ -88,10 +87,16 @@ h3 {
 }
 .main .shop__itemList__item {
   width: 200px;
+  height: 300px;
   display: flex;
   flex-direction: column;
   margin-right: 20px;
   border: 1px solid rgba(0, 0, 0, 0.2);
+  position: relative;
+  cursor: move;
+}
+.main .shop__itemList__img {
+  height: 170px;
 }
 .main .shop__itemList__item--productName,
 .main .shop__itemList__item--branName {
@@ -101,6 +106,8 @@ h3 {
   margin-top: 0px;
 }
 .main .shop__itemList__item--price {
+  position: absolute;
+  bottom: 0px;
   display: block;
   background-color: #f7f7f7;
   width: 100%;
@@ -109,6 +116,7 @@ h3 {
   padding-left: 10px;
 }
 .main .cart__cartBox {
+  position: relative;
   border: 1px solid rgba(0, 0, 0, 0.2);
   padding: 10px;
   display: flex;
@@ -140,12 +148,26 @@ h3 {
   background-color: #f7f7f7;
   border: 1px solid rgba(0, 0, 0, 0.2);
 }
-.main #cartItemQuantity {
+.main .cartItemInput {
   height: 20px;
   border: 1px solid rgba(0, 0, 0, 0.2);
 }
 .main .cart__cartBox__totalPrice {
-  margin-top: 20px;
-  margin-bottom: 10px;
-  align-self: flex-end;
+  display: inline-block;
+  margin-bottom: 30px;
+}
+.main .cart__cartBox__purchaseBtn {
+  border: none;
+  outline: none;
+  background-color: #027bff;
+  color: #ffffff;
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  left: 0px;
+  height: 30px;
+  cursor: pointer;
+}
+.main .hideItem {
+  display: none;
 }/*# sourceMappingURL=style.css.map */
