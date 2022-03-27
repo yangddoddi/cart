@@ -48,7 +48,6 @@ function showOrHideItem(target, showOrHide) {
   target.style.display = `${showOrHide}`;
 }
 
-// 드래그 이벤트 모음
 function dragEvent() {
   const shopItem = document.querySelectorAll(".shop__itemList__item");
   const dropArea = document.querySelector(".cart__cartBox__dropArea");
@@ -148,8 +147,12 @@ function writeInputBox() {
 }
 
 function clickPurchaseBtn() {
-  const cartItemList = document.querySelector(".cart__cartBox__itemList");
   const container = document.querySelector(".cart");
+  container.addEventListener("click", clickPurchaseEvent);
+}
+
+function clickPurchaseEvent(e) {
+  const cartItemList = document.querySelector(".cart__cartBox__itemList");
   const purchaseBtn = document.querySelector(".cart__cartBox__purchaseBtn");
   const blackBackground = document.querySelector(".blackBackground");
   const modal = document.querySelector(".purchase__modal");
@@ -160,32 +163,35 @@ function clickPurchaseBtn() {
   const receipt = document.querySelector(".receiptContainer");
   const receiptBtn = document.querySelector(".receiptBtn");
 
-  container.addEventListener("click", (e) => {
-    if (e.target.tagName !== "BUTTON" && e.target.tagName !== "INPUT") {
-      return;
+  if (e.target.tagName !== "BUTTON" && e.target.tagName !== "INPUT") {
+    return;
+  }
+  if (e.target == purchaseBtn) {
+    if (!cartItemList.hasChildNodes()) {
+      alert("상품을 담아주세요.");
+    } else {
+      scrollToTop();
+      showOrHideItem(blackBackground, "block");
+      showOrHideItem(modal, "block");
     }
-    if (e.target == purchaseBtn) {
-      if (!cartItemList.hasChildNodes()) {
-        alert("상품을 담아주세요.");
-      } else {
-        showOrHideItem(blackBackground, "block");
-        showOrHideItem(modal, "block");
-      }
-    }
-    if (e.target == cancelPurchaseBtn) {
-      showOrHideItem(blackBackground, "none");
-      showOrHideItem(modal, "none");
-    }
-    if (e.target == modalSubmitBtn) {
-      updateReceipt();
-      showOrHideItem(modal, "none");
-      showOrHideItem(receipt, "block");
-    }
-    if (e.target == receiptBtn) {
-      showOrHideItem(receipt, "none");
-      showOrHideItem(blackBackground, "none");
-    }
-  });
+  }
+  if (e.target == cancelPurchaseBtn) {
+    showOrHideItem(blackBackground, "none");
+    showOrHideItem(modal, "none");
+  }
+  if (e.target == modalSubmitBtn) {
+    updateReceipt();
+    showOrHideItem(modal, "none");
+    showOrHideItem(receipt, "block");
+  }
+  if (e.target == receiptBtn) {
+    showOrHideItem(receipt, "none");
+    showOrHideItem(blackBackground, "none");
+  }
+}
+
+function scrollToTop() {
+  scrollTo(0, 0);
 }
 
 function updateReceipt() {
