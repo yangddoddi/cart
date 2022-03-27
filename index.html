@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="v∏iewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>내집꾸미기</title>
     <link rel="stylesheet" href="style.css">
     <script src="main.js" defer></script>
@@ -56,8 +56,31 @@
                 <span>total <span class="cart__cartBox__totalPrice">0</span>₩</span>
                 <button class="cart__cartBox__purchaseBtn">구매하기</button>
             </div>
+            <div class="blackBackground">
+                <div class="purchase__modal">
+                    <button class="purchase__modal__cancelBtn">X</button>
+                    <h1>Thank you for your purchase!</h1>
+                    <h3>배송 정보를 전달 받을 연락처와 이메일을 입력해주세요.</h3>
+                    <form>
+                        <span>Email</span>
+                        <input type="email" id="emailInput" placeholder="이메일 주소를 입력해주세요.">
+                        <span>Phone Number</span>
+                        <input type="tel" id="telInput" placeholder="연락처를 입력해주세요.">
+                        <!-- <input class="purchase__modal__submitBtn" type="submit" value="전송하기"> -->
+                    </form>
+                    <button class="purchase__modal__submitBtn">전송하기</button>
+                </div>
+                <div class="receiptContainer">
+                    <canvas id="receipt" width="600" height="600">
+                    </canvas>
+                    <button class="receiptBtn">닫기</button>
+                </div>
+                <!-- <div class="modal"></div>
+                <canvas id="receipt" width="350" height="450"></canvas> -->
+            </div>
         </section>
     </div>
+
 </body>
 
 </html>

@@ -99,7 +99,7 @@ function dropHandler(e) {
   const exists = document.querySelectorAll(`[data-id='${dataId}']`);
 
   if (exists.length < 2) {
-    cartItemList.insertAdjacentHTML("beforebegin", creatCartITem(dataId));
+    cartItemList.insertAdjacentHTML("beforeend", creatCartITem(dataId));
     increaseQuantity(dataId);
     updateCart();
   } else {
@@ -147,12 +147,89 @@ function writeInputBox() {
   });
 }
 
+function clickPurchaseBtn() {
+  const cartItemList = document.querySelector(".cart__cartBox__itemList");
+  const container = document.querySelector(".cart");
+  const purchaseBtn = document.querySelector(".cart__cartBox__purchaseBtn");
+  const blackBackground = document.querySelector(".blackBackground");
+  const modal = document.querySelector(".purchase__modal");
+  const modalSubmitBtn = document.querySelector(".purchase__modal__submitBtn");
+  const cancelPurchaseBtn = document.querySelector(
+    ".purchase__modal__cancelBtn"
+  );
+  const receipt = document.querySelector(".receiptContainer");
+  const receiptBtn = document.querySelector(".receiptBtn");
+
+  container.addEventListener("click", (e) => {
+    if (e.target.tagName !== "BUTTON" && e.target.tagName !== "INPUT") {
+      return;
+    }
+    if (e.target == purchaseBtn) {
+      if (!cartItemList.hasChildNodes()) {
+        alert("상품을 담아주세요.");
+      } else {
+        showOrHideItem(blackBackground, "block");
+        showOrHideItem(modal, "block");
+      }
+    }
+    if (e.target == cancelPurchaseBtn) {
+      showOrHideItem(blackBackground, "none");
+      showOrHideItem(modal, "none");
+    }
+    if (e.target == modalSubmitBtn) {
+      updateReceipt();
+      showOrHideItem(modal, "none");
+      showOrHideItem(receipt, "block");
+    }
+    if (e.target == receiptBtn) {
+      showOrHideItem(receipt, "none");
+      showOrHideItem(blackBackground, "none");
+    }
+  });
+}
+
+function updateReceipt() {
+  const today = new Date();
+  const cartItemName = document.querySelectorAll(".cartItem__productName");
+  const cartItemBrand = document.querySelectorAll(".cartItem__brandName");
+  const cartItemQuantity = document.querySelectorAll(".cartItemInput");
+  const cartItemPrice = document.querySelectorAll(".cartItem__price");
+  const totalPrice = document.querySelector(".cart__cartBox__totalPrice");
+  const receipt = document.querySelector("#receipt");
+  const ctx = receipt.getContext("2d");
+  ctx.font = "20px serif";
+  ctx.fillText("영수증", 30, 50);
+  ctx.font = "12px serif";
+  ctx.fillText(today.toLocaleDateString(), 30, 70);
+  ctx.fillText(today.toLocaleTimeString(), 120, 70);
+  for (let i = 0; i < cartItemName.length; i++) {
+    ctx.font = "16px serif";
+    ctx.fillText(` 제품명 : ${cartItemName[i].innerText}`, 30, 100 * (i + 1));
+    ctx.fillText(
+      ` 브랜드 : ${cartItemBrand[i].innerText}`,
+      30,
+      100 * (i + 1) + 20
+    );
+    ctx.fillText(
+      ` 수량 : ${cartItemQuantity[i].value}개`,
+      30,
+      100 * (i + 1) + 40
+    );
+    ctx.fillText(
+      ` 금액 : ${cartItemPrice[i].innerText}원`,
+      30,
+      100 * (i + 1) + 60
+    );
+  }
+  ctx.fillText(` 총액 : ${totalPrice.innerText}원`, 400, 500);
+}
+
 loadItems()
   .then((products) => {
     displayShopItems(products);
   })
   .then(() => {
     dragEvent();
+    clickPurchaseBtn();
+    searchBox.addEventListener("keyup", searchFilter);
   });
-
-searchBox.addEventListener("keyup", searchFilter);

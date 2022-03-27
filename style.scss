@@ -7,6 +7,18 @@ $cartButton: #027bff;
 $shopPriceBackgroud: #f7f7f7;
 $white: #ffffff;
 $borderGrey: 1px solid rgba(0, 0, 0, 0.2);
+%blueBtn {
+  border: none;
+  outline: none;
+  background-color: #027bff;
+  color: $white;
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  left: 0px;
+  height: 30px;
+  cursor: pointer;
+}
 
 * {
   box-sizing: border-box;
@@ -186,19 +198,81 @@ h3 {
   }
 
   .cart__cartBox__purchaseBtn {
-    border: none;
-    outline: none;
-    background-color: #027bff;
-    color: $white;
-    position: absolute;
-    bottom: 0px;
-    width: 100%;
-    left: 0px;
-    height: 30px;
-    cursor: pointer;
+    @extend %blueBtn;
   }
 
-  .hideItem {
+  .purchase__modal {
     display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: $white;
+    width: 50%;
+    height: 50%;
+    border: $borderGrey;
+    padding: 30px;
+
+    .purchase__modal__cancelBtn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      border: none;
+      background-color: transparent;
+      font-size: 30px;
+      color: rgba(0, 0, 0, 0.4);
+      cursor: pointer;
+    }
+
+    input {
+      width: 50%;
+      height: 30px;
+    }
+
+    span {
+      display: block;
+      margin-top: $marginSpace * 2;
+    }
+
+    .purchase__modal__submitBtn {
+      @extend %blueBtn;
+    }
+  }
+
+  .blackBackground {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.2);
+    display: none;
+  }
+
+  .receiptContainer {
+    display: none;
+  }
+
+  #receipt {
+    background-color: beige;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: $white;
+    border: $borderGrey;
+    z-index: 10;
+  }
+
+  .receiptBtn {
+    position: absolute;
+    top: 75%;
+    left: 65%;
+    z-index: 20;
+  }
+
+  .highlight {
+    background-color: yellow;
+    color: yellow;
   }
 }
