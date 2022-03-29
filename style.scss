@@ -99,6 +99,7 @@ h3 {
   justify-content: space-between;
   padding: 0px $marginSpace * 2;
   max-width: 1200px;
+  margin-bottom: 1000px;
 
   .shop {
     display: flex;
@@ -256,8 +257,8 @@ h3 {
   #receipt {
     background-color: beige;
     position: absolute;
-    top: 50%;
-    left: 50%;
+    top: 500px;
+    left: 500px;
     transform: translate(-50%, -50%);
     background-color: $white;
     border: $borderGrey;
@@ -266,13 +267,8 @@ h3 {
 
   .receiptBtn {
     position: absolute;
-    top: 75%;
-    left: 65%;
+    top: 730px;
+    left: 700px;
     z-index: 20;
-  }
-
-  .highlight {
-    background-color: yellow;
-    color: yellow;
   }
 }

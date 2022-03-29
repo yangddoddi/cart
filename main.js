@@ -17,7 +17,7 @@ function displayShopItems(products) {
 
 function creatShopItem(product) {
   return `<div data-id=${product.id} class="shop__itemList__item" draggable="true">
-  <img src=${product.photo} alt="shopItemImg" class="shop__itemList__img" draggable="false">
+  <img src=./${product.photo} alt="shopItemImg" class="shop__itemList__img" draggable="false">
   <h3 class="shop__itemList__item--productName">
       ${product.product_name}
   </h3>
@@ -105,7 +105,6 @@ function dropHandler(e) {
     increaseQuantity(dataId);
     updateCart();
   }
-
   writeInputBox();
 }
 
