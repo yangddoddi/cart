@@ -2,7 +2,7 @@
 
 gif ⬇️
 
-![cart](https://user-images.githubusercontent.com/97802103/166095383-c8e6fb69-c4ec-4247-ac3e-0b593bbda2c1.gif)
+![cart222](https://user-images.githubusercontent.com/97802103/166095583-5f06a1f5-4641-4d68-8c26-7cd750a3cb2e.gif)
 
 Demo : https://yangddoddi.github.io/cart/
 
