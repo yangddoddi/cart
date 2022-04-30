@@ -24,7 +24,8 @@ HTML, CSS, JavaScript
 
 ### 성과
 
-fetch API를 활용하여 데이터 바인딩을 할 수 있다.
-drag&drop API의 작동 원리를 이해하고 원하는 기능을 구현할 수 있다.
-DOM을 조작하여 동적으로 HTML을 추가, 제거할 수 있다.
-canvas API의 기초적인 활용법을 배웠다
+fetch API를 활용하여 데이터 바인딩을 할 수 있다.  
+filter를 이용하여 검색어 기능을 구현할 수 있다.  
+drag&drop API의 작동 원리를 이해하고 원하는 기능을 구현할 수 있다.  
+DOM을 조작하여 동적으로 HTML을 추가, 제거할 수 있다.  
+canvas API의 기초적인 활용법을 배웠다. 
